@@ -49,7 +49,6 @@
       <div class="header-right">
         <div id="sensor-status" class="status-badge offline">
           <span class="status-dot"></span>
-          <span class="status-text">Sensors</span>
         </div>
       </div>
     </header>
@@ -113,108 +112,6 @@
       <!-- TAB: SENSORS -->
       <section id="tab-sensors" class="tab-content">
         <div class="sensors-wrapper">
-
-          <div class="sensor-card">
-            <div class="card-header">
-              <span class="card-icon">⚡</span>
-              <div>
-                <h3>Acceleròmetre</h3>
-                <small>Moviment en 3 eixos</small>
-              </div>
-              <div class="card-badge" id="accelBadge">OFF</div>
-            </div>
-
-            <div class="axes-display">
-              <div class="axis-row">
-                <span class="axis-label">Eix X</span>
-                <div class="axis-track">
-                  <div class="axis-bar x-bar" id="axisX"></div>
-                  <div class="axis-center"></div>
-                </div>
-                <span class="axis-value" id="valX">0.00</span>
-              </div>
-              <div class="axis-row">
-                <span class="axis-label">Eix Y</span>
-                <div class="axis-track">
-                  <div class="axis-bar y-bar" id="axisY"></div>
-                  <div class="axis-center"></div>
-                </div>
-                <span class="axis-value" id="valY">0.00</span>
-              </div>
-              <div class="axis-row">
-                <span class="axis-label">Eix Z</span>
-                <div class="axis-track">
-                  <div class="axis-bar z-bar" id="axisZ"></div>
-                  <div class="axis-center"></div>
-                </div>
-                <span class="axis-value" id="valZ">0.00</span>
-              </div>
-            </div>
-
-            <div class="sphere-container">
-              <div class="sphere" id="sphere3d">
-                <div class="sphere-dot"></div>
-              </div>
-              <div class="sphere-shadow" id="sphereShadow"></div>
-            </div>
-
-            <div class="intensity-display">
-              <span class="intensity-label">Intensitat</span>
-              <div class="intensity-ring">
-                <svg viewBox="0 0 100 100" class="intensity-svg">
-                  <defs>
-                    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%"   stop-color="#7c3aed"/>
-                      <stop offset="100%" stop-color="#06b6d4"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="50" cy="50" r="40" class="ring-bg"/>
-                  <circle cx="50" cy="50" r="40" class="ring-fill" id="ringPath"/>
-                </svg>
-                <div class="intensity-value" id="intensityVal">0</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="sensor-card">
-            <div class="card-header">
-              <span class="card-icon">🧭</span>
-              <div>
-                <h3>Orientació</h3>
-                <small>Inclinació del dispositiu</small>
-              </div>
-              <div class="card-badge" id="gyroBadge">OFF</div>
-            </div>
-
-            <div class="compass-container">
-              <div class="compass">
-                <div class="compass-rose" id="compassRose">
-                  <div class="compass-arrow"></div>
-                </div>
-                <div class="compass-labels">
-                  <span class="compass-n">N</span>
-                  <span class="compass-e">E</span>
-                  <span class="compass-s">S</span>
-                  <span class="compass-w">O</span>
-                </div>
-              </div>
-              <div class="orientation-data">
-                <div class="orient-item">
-                  <span class="orient-label">Alpha (Z)</span>
-                  <span class="orient-val" id="oAlpha">0°</span>
-                </div>
-                <div class="orient-item">
-                  <span class="orient-label">Beta (X)</span>
-                  <span class="orient-val" id="oBeta">0°</span>
-                </div>
-                <div class="orient-item">
-                  <span class="orient-label">Gamma (Y)</span>
-                  <span class="orient-val" id="oGamma">0°</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div class="sensor-card">
             <div class="card-header">
               <span class="card-icon">📍</span>
@@ -222,44 +119,23 @@
                 <h3>Localització</h3>
                 <small>Ubicació del teu cotxe</small>
               </div>
-              <div class="card-badge" id="gyroBadge">OFF</div>
             </div>
-
             <div class="compass-container">
-              <div class="compass">
-                <div class="compass-rose" id="compassRose">
-                  <div class="compass-arrow"></div>
-                </div>
-                <div class="compass-labels">
-                  <span class="compass-n">N</span>
-                  <span class="compass-e">E</span>
-                  <span class="compass-s">S</span>
-                  <span class="compass-w">O</span>
-                </div>
-              </div>
               <div class="location-data">
                 <div class="location-item">
-                  <span class="location-label">Zona: </span>
-                  <span class="location-val" id="oZona">00</span>
+                  <span class="location-label">Latitud: </span>
+                  <span class="location-val" id="oLatitud"></span>
                 </div>
                 <div class="location-item">
-                  <span class="location-label">Passadís: </span>
-                  <span class="location-val" id="oPassadis">00</span>
-                </div>
-                <div class="location-item">
-                  <span class="location-label">Mòdul: </span>
-                  <span class="location-val" id="oModul">00</span>
-                </div>
-                <div class="location-item">
-                  <span class="location-label">Altura: </span>
-                  <span class="location-val" id="oAltura">00</span>
+                  <span class="location-label">Longitud: </span>
+                  <span class="location-val" id="oLongitud"></span>
                 </div>
               </div>
             </div>
           </div>
 
           <button class="activate-btn" id="activateBtn">
-            <span class="btn-icon">🚀</span> Activar Sensors
+            <span class="btn-icon">💾</span> Guardar Ubicació
           </button>
 
           <div class="shake-alert hidden" id="shakeAlert">
@@ -295,8 +171,8 @@
         <span>Càmera</span>
       </button>
       <button class="tab-btn" data-tab="sensors">
-        <span class="tab-icon">🔮</span>
-        <span>Sensors</span>
+        <span class="tab-icon">🗺️</span>
+        <span>Ubicació</span>
       </button>
       <button class="tab-btn" data-tab="gallery">
         <span class="tab-icon">🖼️</span>
