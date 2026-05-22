@@ -10,6 +10,7 @@ const sensorState = {
   active:         false,
   accel:          { x: 0, y: 0, z: 0 },
   orientation:    { alpha: 0, beta: 0, gamma: 0 },
+  location: { oZona: 0, oPassadis: 0, oModul: 0, oAltura: 0 },
   shakeThreshold: 18,
   lastShakeTime:  0,
 };
@@ -51,6 +52,7 @@ async function activate() {
 
   window.addEventListener('devicemotion',      onMotion,      { passive: true });
   window.addEventListener('deviceorientation', onOrientation, { passive: true });
+  window.addEventListener('devicelocation', onLocation, { passive: true });
 
   sensorState.active = true;
   updateUI(true);
@@ -60,6 +62,7 @@ async function activate() {
 function deactivate() {
   window.removeEventListener('devicemotion',      onMotion);
   window.removeEventListener('deviceorientation', onOrientation);
+  window.removeEventListener('devicelocation', onLocation);
 
   sensorState.active = false;
   updateUI(false);
@@ -90,6 +93,15 @@ function onOrientation(event) {
   sensorState.orientation.gamma = event.gamma ?? 0;
 
   renderOrientation();
+}
+
+function onLocation(event) {
+  sensorState.location.oZona = event.oZona ?? 0;
+  sensorState.location.oPassadis = event.oPassadis ?? 0;
+  sensorState.location.oModul = event.oModul ?? 0;
+  sensorState.location.oAltura = event.oAltura ?? 0;
+
+  renderLocation();
 }
 
 // -----------------------------------------------
@@ -164,6 +176,20 @@ function renderOrientation() {
   const compass = document.getElementById('compassRose');
   if (compass) compass.style.transform = `rotate(${-alpha}deg)`;
 }
+
+// -----------------------------------------------
+// RENDER: LOCATION
+// -----------------------------------------------
+
+function renderLocation() {
+  const { zona, passadis, modul, altura } = sensorState.location;
+
+  setText('oZona', `${(zona)}`);
+  setText('oPassadis', `${(passadis)}`);
+  setText('oModul', `${(modul)}`);
+  setText('oAltura', `${(altura)}`);
+}
+
 
 // -----------------------------------------------
 // DETECCIÓ DE SACSEJADA

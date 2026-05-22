@@ -215,6 +215,49 @@
             </div>
           </div>
 
+          <div class="sensor-card">
+            <div class="card-header">
+              <span class="card-icon">📍</span>
+              <div>
+                <h3>Localització</h3>
+                <small>Ubicació del teu cotxe</small>
+              </div>
+              <div class="card-badge" id="gyroBadge">OFF</div>
+            </div>
+
+            <div class="compass-container">
+              <div class="compass">
+                <div class="compass-rose" id="compassRose">
+                  <div class="compass-arrow"></div>
+                </div>
+                <div class="compass-labels">
+                  <span class="compass-n">N</span>
+                  <span class="compass-e">E</span>
+                  <span class="compass-s">S</span>
+                  <span class="compass-w">O</span>
+                </div>
+              </div>
+              <div class="location-data">
+                <div class="location-item">
+                  <span class="location-label">Zona: </span>
+                  <span class="location-val" id="oZona">00</span>
+                </div>
+                <div class="location-item">
+                  <span class="location-label">Passadís: </span>
+                  <span class="location-val" id="oPassadis">00</span>
+                </div>
+                <div class="location-item">
+                  <span class="location-label">Mòdul: </span>
+                  <span class="location-val" id="oModul">00</span>
+                </div>
+                <div class="location-item">
+                  <span class="location-label">Altura: </span>
+                  <span class="location-val" id="oAltura">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <button class="activate-btn" id="activateBtn">
             <span class="btn-icon">🚀</span> Activar Sensors
           </button>
