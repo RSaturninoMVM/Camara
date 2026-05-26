@@ -61,8 +61,15 @@ async function activate() {
 function renderLocation() {
   const { latitud, longitud } = sensorState.location;
 
-  setText('oLatitud', latitud.toFixed(6,),'º');
-  setText('oLongitud', longitud.toFixed(6,),'º');
+  setText('oLatitud', `${latitud.toFixed(6)}º`);
+  setText('oLongitud', `${longitud.toFixed(6)}º`);
+
+  const mapa = document.getElementById('oMapa');
+  if (mapa) {
+    mapa.src = `https://google.com,{latitud},${longitud}&z=16&output=embed`;
+    mapa.style.display = "block";
+    setText('oMapa', `https://google.com{latitud},${longitud}&z=16&output=embed`);
+  }
 };
 
 
