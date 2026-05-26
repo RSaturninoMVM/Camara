@@ -67,8 +67,8 @@ function renderLocation() {
   const mapa = document.getElementById('oMapa');
   if (mapa) {
     mapa.src = `https://google.com,{latitud},${longitud}&z=16&output=embed`;
+    setText('oMapa', `https://www.google.com/maps/@${latitud},${longitud},15z?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D`);
     mapa.style.display = "block";
-    setText('oMapa', `https://google.com{latitud},${longitud}&z=16&output=embed`);
   }
 };
 
