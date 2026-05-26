@@ -137,13 +137,31 @@
           <button class="activate-btn" id="activateBtn">
             <span class="btn-icon">💾</span> Guardar Ubicació
           </button>
-
-          <div class="shake-alert hidden" id="shakeAlert">
-            <span>💥</span> Sacsejada detectada!
-          </div>
-
         </div>
       </section>
+
+      <section id="tab-sensors" class="tab-content">
+        <div class="sensors-wrapper">
+          <div class="sensor-card">
+            <div class="card-header">
+              <span class="card-icon">🗾</span>
+              <div>
+                <h3>Mapa</h3>
+                <small>Mapa on es motra la ubicació del cotxe</small>
+              </div>
+            </div>
+            <div class="compass-container">
+              <div class="mapa-data">
+                <div class="mapa-item">
+                  <span class="mapa-label">Mapa: </span>
+                  <span class="mapa-val" id="oMapa"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <!-- TAB: GALERIA -->
       <section id="tab-gallery" class="tab-content">

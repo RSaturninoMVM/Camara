@@ -44,7 +44,6 @@ async function activate() {
         console.error("Error de geolocalització:", error.message);
         showToast(`📍 GPS: ${error.message}`, 'error');
       },
-      { enableHighAccuracy: true, maximumAge: 0 }
     );
   } else {
     showToast('❌ El navegador no té GPS', 'error');
@@ -62,8 +61,8 @@ async function activate() {
 function renderLocation() {
   const { latitud, longitud } = sensorState.location;
 
-  setText('oLatitud', latitud.toFixed(6));
-  setText('oLongitud', longitud.toFixed(6));
+  setText('oLatitud', latitud.toFixed(6,),'º');
+  setText('oLongitud', longitud.toFixed(6,),'º');
 };
 
 
